@@ -1,0 +1,9 @@
+<h2>Editor Page</h2>
+             <button>Edit Article</button>
+
+<div style="margin-top:16px">
+  <a *ngIf="ability.getAbility().can('read','Article') && router.url !== '/guest'" routerLink="/guest">Guest</a>
+  <span *ngIf="ability.getAbility().can('manage','all') && router.url !== '/admin'" style="margin-left:12px">
+    <a routerLink="/admin">Admin</a>
+  </span>
+</div>
