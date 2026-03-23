@@ -1,0 +1,16 @@
+<h2>Welcome on Guest Page</h2>
+       
+<h3>What is Stripe?</h3>
+<p>Stripe is a popular payment gateway used by many developers. Additionally, it provides an API for payment integration, which we’ll explore and saw how it can be used.
+
+Setting Up: Getting the API Key
+To use Stripe, we first need to sign up and obtain a token (API Key). This API key enables secure communication with Stripe. Stripe offers separate tokens for Test and Live data, making it easier to develop using the Test API Token initially.
+
+After registration, you can access the Stripe Dashboard, which includes sections like Payments, Customers and Articles. Under the Developer section, you can generate and retrieve your Tokens.</p>
+
+<div style="margin-top:16px">
+  <a *ngIf="ability.getAbility().can('update','Article') && router.url !== '/editor'" [routerLink]="'/editor'">Editor</a>
+  <span *ngIf="ability.getAbility().can('manage','all') && router.url !== '/admin'" style="margin-left:12px">
+    <a [routerLink]="'/admin'">Admin</a>
+  </span>
+</div>

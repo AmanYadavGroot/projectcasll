@@ -1,0 +1,9 @@
+<h2>Admin Page</h2>
+             <p>Only Admin can access this page</p>
+<h5>The Admin role is typically given full access (can update, read, delete, etc.), and that’s enforced through your ability/permissions system.</h5>
+<div style="margin-top:16px">
+  <a *ngIf="ability.getAbility().can('update','Article') && router.url !== '/editor'" routerLink="/editor">Editor</a>
+  <span *ngIf="ability.getAbility().can('read','Article') && router.url !== '/guest'" style="margin-left:12px">
+    <a routerLink="/guest">Guest</a>
+  </span>
+</div>

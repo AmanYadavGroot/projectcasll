@@ -1,0 +1,7 @@
+    <nav *ngIf="auth.getRole()">
+      <a *ngIf="can('read','Article') && auth.getRole() === 'guest' && router.url !== '/guest'" routerLink="/guest">Guest</a>
+      <a *ngIf="can('update','Article') && auth.getRole() === 'editor' && router.url !== '/editor'" routerLink="/editor">Editor</a>
+      <a *ngIf="can('manage','all') && auth.getRole() === 'admin' && router.url !== '/admin'" routerLink="/admin">Admin</a>
+      <a (click)="logout()" style="cursor:pointer">Logout</a>
+    </nav>
+    <router-outlet></router-outlet>
